@@ -4,7 +4,6 @@
 //Предоставляет меню с 4 опциями: insert, erase, replace, и find.
 //В зависимости от выбора пользователя, программа предоставляет инструкции для использования соответствующего метода и выводит результат.
 
-
 #include <iostream>
 #include <string>
 #include <vector>
@@ -20,10 +19,12 @@ int main() {
 	std::cout << "2. Erase" << std::endl;
 	std::cout << "3. Replace" << std::endl;
 	std::cout << "4. Find" << std::endl;
-	int option;
-	while (true){
+	std::cout << "5. Close menu" << std::endl;
+	int option = 0;
+	
+	while (option != 5) {
 		std::cout << std::endl;
-		std::cout << "Choose an option(1-4): ";
+		std::cout << "Choose an option(1-5): ";
 		option = 0;
 		std::cin >> option;
 		if (!option) {
@@ -70,6 +71,9 @@ int main() {
 				std::cout << "string not found :/";
 			}
 			break;
-}
-	}
+		case 5:
+		    std::cout << "Ты что ввел?";
+		    break;
+        } 
+	} 
 }
