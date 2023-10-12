@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib> 
 #include <vector>
 
 //попробовать getline для этой штуки
@@ -14,7 +15,7 @@ int main() {
 	std::vector<char> myvector;
 	std::string word;
 	std::cout << "Enter a string: ";
-	std::cin >> word;
+	getline(std::cin, word);
 	std::cout << "1. Insert" << std::endl;
 	std::cout << "2. Erase" << std::endl;
 	std::cout << "3. Replace" << std::endl;
@@ -74,6 +75,6 @@ int main() {
 		case 5:
 		    std::cout << "Ты что ввел?";
 		    break;
-        } 
+        	} 
 	} 
 }
