@@ -1,0 +1,44 @@
+#include <iostream>
+#include <vector>
+#include <Windows.h>
+
+const int width = 20;
+const int height = 10;
+const char element = '.';
+
+int main() {
+    setlocale(LC_ALL, "RUS");
+    SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
+    std::vector<std::vector<char>> field;
+    std::vector<char> border;
+    std::vector<char> cell;
+    cell.push_back(element);
+    int cell_id = 1;
+    int row = 1;
+
+    while (row != height + 1) {
+        field.push_back(cell);
+        cell_id += 1;
+        if (cell_id == width + 1) {
+            row += 1;
+            cell_id = 1;
+        }
+    }
+
+    cell_id = 1;
+    for (std::vector<char> m : field) {
+        for (char l : m) {
+            if (cell_id == width) {
+                cell_id = 1;
+                std::cout << l << std::endl;
+            }
+            else {
+                std::cout << l;
+                cell_id += 1;
+            }
+        }
+    }
+
+    return 0;
+}
